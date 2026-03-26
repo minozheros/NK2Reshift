@@ -27,10 +27,6 @@ def create_mappings(
         right_button="track_right_button",
     )
 
-    mappings["Mixer"] = dict(
-        # Sliders always control track volume.
-        volume_controls="sliders",
-    )
 
     # The common setup shared by default, shift, and alt modes.
     #
@@ -67,6 +63,7 @@ def create_mappings(
                     component="Session",
                     clip_launch_buttons="mixer_buttons",
                 ),
+                dict(component="Mixer", volume_controls="sliders"),
                 sends_mode(),
             ]
         ),
@@ -77,6 +74,7 @@ def create_mappings(
             modes=[
                 dict(
                     component="Mixer",
+                    volume_controls="sliders",
                     solo_buttons="solo_buttons",
                     mute_buttons="mute_buttons",
                     arm_buttons="arm_buttons",
@@ -98,6 +96,7 @@ def create_mappings(
                 ),
                 dict(
                     component="Mixer",
+                    volume_controls="sliders",
                     reset_send_buttons="solo_buttons",
                     track_select_buttons="mute_buttons",
                 ),
@@ -115,6 +114,7 @@ def create_mappings(
                 dict(
                     component="Device",
                     parameter_controls="knobs",
+                    secondary_parameter_controls="sliders",
                     device_lock_button="marker_set_button",
                     device_on_off_button="cycle_button",
                 ),
@@ -153,3 +153,4 @@ def create_mappings(
     )
 
     return mappings
+
